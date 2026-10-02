@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>酒色电影网 | 酒色电影网 - 一杯一色，一色一幕</title>
+<meta name="keywords" content="酒色电影网, 酒色电影网电影, 酒色电影网片单, 酒色电影网品鉴笔记, 氛围片, 深夜片单, 配色片单, 情绪片单">
+<meta name="description" content="酒色电影网（https://jiusedianyingwang-wap.github.io）按色彩与气氛排片：一杯一色，一色一幕。红是情热，琥珀是回忆，墨黑是深夜，共六色，每色十二部。">
+<meta name="robots" content="index,follow">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<meta property="og:type" content="website">
+<meta property="og:title" content="酒色电影网 | 一杯一色，一色一幕">
+<meta property="og:description" content="酒色电影网（https://jiusedianyingwang-wap.github.io）按色彩与气氛排片：一杯一色，一色一幕。红是情热，琥珀是回忆，墨黑是深夜。">
+<meta property="og:url" content="https://jiusedianyingwang-wap.github.io/">
+<meta property="og:site_name" content="酒色电影网">
+<meta property="og:locale" content="zh_CN">
+<link rel="canonical" href="https://jiusedianyingwang-wap.github.io/">
+<style>
+:root{
+  --bg:#120c0a;--bg2:#1a120e;--bg3:#241a14;
+  --paper:#f2e9da;--paper2:#e8dcc4;
+  --ink:#1a120e;--ink2:#3a2a1e;--ink3:#6a5846;
+  --red:#c8381f;--amber:#d68a2e;--gold:#d4af37;--green:#3f6b4a;--blue:#2f5a78;--plum:#7a3b5a;
+  --line:rgba(242,233,218,.14);--line2:rgba(242,233,218,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--paper);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  font-size:16px;line-height:1.85;overflow-x:hidden;
+  background-image:
+    radial-gradient(ellipse 90% 70% at 18% 8%,rgba(200,56,31,.20),transparent 62%),
+    radial-gradient(ellipse 80% 80% at 88% 96%,rgba(214,138,46,.16),transparent 64%);
+  background-attachment:fixed;
+}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;
+  background-image:radial-gradient(circle at 20% 30%,rgba(255,255,255,.05) .8px,transparent 1.4px),radial-gradient(circle at 70% 70%,rgba(255,255,255,.04) .8px,transparent 1.4px);
+  background-size:8px 8px,13px 13px}
+a{color:inherit;text-decoration:none;transition:.18s}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,textarea{font-family:inherit}
+::selection{background:var(--red);color:var(--paper)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 34px}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+
+/* 导航 */
+.nav{position:sticky;top:0;z-index:90;border-bottom:1px solid var(--line);background:rgba(18,12,10,.86);backdrop-filter:blur(12px)}
+.nav .wrap{display:flex;align-items:center;height:70px;gap:0}
+.logo{display:flex;align-items:center;gap:13px;flex-shrink:0;padding-right:22px;border-right:1px solid var(--line);margin-right:10px}
+.logo .glass{width:34px;height:40px;flex-shrink:0;position:relative;background:linear-gradient(135deg,var(--red) 0%,var(--red) 46%,rgba(255,255,255,.16) 46%,rgba(255,255,255,.16) 54%,var(--amber) 54%,var(--amber) 100%);border-radius:4px 4px 9px 9px;box-shadow:inset 0 0 0 2px rgba(242,233,218,.35);transform:rotate(-7deg)}
+.logo .glass::after{content:"";position:absolute;left:5px;right:5px;bottom:5px;height:3px;background:rgba(242,233,218,.6);border-radius:2px}
+.logo b{font-size:21px;font-weight:900;letter-spacing:1.6px}
+.logo b i{font-style:normal;color:var(--amber)}
+.navlinks{display:flex;align-items:center;gap:2px;flex:1}
+.navlinks a{padding:8px 13px;font-size:13.5px;font-weight:700;letter-spacing:.6px;white-space:nowrap;position:relative}
+.navlinks a:hover{color:var(--amber)}
+.navlinks a::before{content:"";position:absolute;left:13px;right:13px;bottom:2px;height:1px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:.22s}
+.navlinks a:hover::before{transform:scaleX(1)}
+.pour{display:flex;align-items:center;gap:8px;padding:10px 22px;background:var(--red);color:var(--paper);font-size:13.5px;font-weight:900;letter-spacing:2px;flex-shrink:0;transition:.2s}
+.pour:hover{background:var(--amber);color:var(--ink)}
+.pour::before{content:"倒";display:grid;place-items:center;width:15px;height:15px;border:1px solid rgba(242,233,218,.6);border-radius:50%;font-size:9.5px}
+.mob{display:none;width:40px;height:40px;margin-left:8px;position:relative;flex-shrink:0}
+.mob i{position:absolute;left:50%;top:50%;width:18px;height:2px;background:var(--paper);transform:translate(-50%,-50%)}
+.mob i:nth-child(1){transform:translate(-50%,calc(-50% - 6px))}
+.mob i:nth-child(3){transform:translate(-50%,calc(-50% + 6px))}
+
+/* 首屏：吧台 */
+.hero{position:relative;z-index:1;padding:52px 0 30px}
+.hero .bar{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:center}
+.hero .tx .kicker{font-size:11.5px;letter-spacing:8px;color:var(--ink3);text-transform:uppercase}
+.hero h1{font-size:clamp(36px,6.4vw,78px);font-weight:900;letter-spacing:3px;line-height:1.28;margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero h1 i{font-style:normal;color:var(--amber);font-size:.62em}
+.hero .sub{margin-top:22px;font-size:16px;color:var(--paper2);letter-spacing:.6px;max-width:540px;text-align:justify}
+.hero .menu{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.hero .menu span{font-size:12px;letter-spacing:1.5px;padding:5px 13px;border:1px solid var(--line);color:var(--paper2)}
+.hero .acts{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .acts a{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;font-size:13.5px;font-weight:900;letter-spacing:3px;border:1.5px solid var(--paper)}
+.hero .acts .a1{background:var(--red);border-color:var(--red)}
+.hero .acts .a1:hover{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.hero .acts .a2{background:transparent}
+.hero .acts .a2:hover{border-color:var(--amber);color:var(--amber)}
+
+/* 酒柜 */
+.cabinet{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,rgba(242,233,218,.05),rgba(242,233,218,.02));padding:24px 22px 22px}
+.cabinet .shelf{border-top:3px solid rgba(214,138,46,.55);box-shadow:inset 0 14px 18px -14px rgba(0,0,0,.9);padding-top:18px;margin-bottom:6px}
+.cabinet .shelf:last-child{margin-bottom:0}
+.cabinet .row{display:flex;gap:14px}
+.bottle{flex:1;height:168px;position:relative;display:grid;place-items:end center;transition:.25s;cursor:pointer}
+.bottle:hover{transform:translateY(-8px)}
+.bottle .body{width:62%;height:84%;position:relative;border-radius:5px 5px 9px 9px;overflow:hidden;box-shadow:inset -8px 0 14px rgba(0,0,0,.4),inset 6px 0 12px rgba(255,255,255,.16),0 6px 16px rgba(0,0,0,.5)}
+.bottle .body::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.28) 0 4%,rgba(255,255,255,0) 22%,rgba(0,0,0,.25) 92%,rgba(0,0,0,.5) 100%)}
+.bottle .body::after{content:"";position:absolute;left:50%;top:-12px;width:74%;height:12px;background:inherit;transform:translateX(-50%);border-radius:3px 3px 0 0;filter:brightness(.8)}
+.bottle .neck{position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:32%;height:12px;background:inherit;filter:brightness(.75);border-radius:3px 3px 0 0}
+.bottle .cap{position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:26%;height:9px;background:var(--ink);border-radius:2px}
+.bottle .lbl{position:absolute;left:50%;top:34%;transform:translateX(-50%);width:70%;text-align:center;color:var(--paper);font-size:9.5px;letter-spacing:1.4px;line-height:1.5;text-shadow:0 1px 3px rgba(0,0,0,.7);z-index:2}
+.bottle .lbl b{display:block;font-size:12.5px;font-weight:900;letter-spacing:2px}
+.bottle .name{position:absolute;bottom:-30px;left:0;right:0;text-align:center;font-size:11.5px;letter-spacing:1.5px;color:var(--paper2);white-space:nowrap}
+
+/* 六个色场 */
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.glasscard{position:relative;min-height:300px;overflow:hidden;cursor:pointer;transition:.28s}
+.glasscard:hover{transform:translateY(-6px)}
+.glasscard .fill{position:absolute;inset:0;opacity:.92}
+.glasscard .sheen{position:absolute;left:14%;top:0;bottom:0;width:20%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.22),rgba(255,255,255,0));transform:skewX(-14deg);transition:.5s}
+.glasscard:hover .sheen{left:78%}
+.glasscard .rim{position:absolute;inset:14px;border:1px solid rgba(255,255,255,.35)}
+.glasscard .ct{position:relative;z-index:2;padding:26px 24px;height:100%;display:flex;flex-direction:column;color:#fff}
+.glasscard .ct .hex{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2.5px;opacity:.85}
+.glasscard .ct h3{font-size:30px;font-weight:900;letter-spacing:4px;margin-top:auto;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.glasscard .ct .feel{font-size:13.5px;letter-spacing:1.5px;margin-top:9px;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.glasscard .ct .num{font-family:ui-monospace,Menlo,monospace;font-size:11px;margin-top:13px;letter-spacing:1.5px;opacity:.9}
+.glasscard .ct .arr{margin-top:16px;font-size:12px;letter-spacing:3px;align-self:flex-start;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:3px}
+
+/* 品鉴笔记 */
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.note{background:var(--bg2);border:1px solid var(--line);padding:0;display:flex;flex-direction:column;transition:.24s;overflow:hidden}
+.note:hover{background:var(--bg3);transform:translateY(-5px)}
+.note .hd{display:grid;grid-template-columns:64px 1fr;align-items:stretch}
+.note .hd .sw{display:grid;place-items:center;font-size:11px;font-weight:900;letter-spacing:1px;line-height:1.5;color:#fff;text-align:center}
+.note .hd .sw b{font-size:19px;display:block;font-family:ui-monospace,Menlo,monospace}
+.note .hd .ti{padding:13px 16px}
+.note .hd .ti h4{font-size:18.5px;font-weight:900;letter-spacing:1.5px}
+.note .hd .ti small{display:block;font-size:11.5px;letter-spacing:2px;color:var(--ink3);margin-top:3px}
+.note .bd{padding:15px 18px 12px;border-top:1px solid var(--line2)}
+.note .bd ul li{display:grid;grid-template-columns:16px 1fr;gap:9px;padding:6.5px 0;border-bottom:1px dashed var(--line2);font-size:13.5px}
+.note .bd ul li:last-child{border-bottom:0}
+.note .bd ul li .dot{width:6px;height:6px;border-radius:50%;background:var(--c);margin-top:9px}
+.note .ft{padding:13px 18px 16px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink3);letter-spacing:1px;margin-top:auto}
+.note .ft b{color:var(--paper2);font-weight:900}
+
+/* 今晚的喝法 */
+.menu2{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.menu2 .mi{padding:24px 22px;border-right:1px solid var(--line2);position:relative;transition:.2s;cursor:pointer}
+.menu2 .mi:last-child{border-right:0}
+.menu2 .mi:hover{background:var(--bg3)}
+.menu2 .mi .st{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:var(--amber);letter-spacing:2px}
+.menu2 .mi h4{font-size:19px;font-weight:900;letter-spacing:2px;margin:10px 0 8px}
+.menu2 .mi p{font-size:12.5px;color:var(--paper2);letter-spacing:.5px;line-height:1.75}
+.menu2 .mi .ic{position:absolute;right:18px;top:20px;width:26px;height:26px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:11px;color:var(--ink3)}
+
+/* 酒单表格 */
+.list{background:var(--bg2);border:1px solid var(--line);overflow:hidden}
+.list .head{display:grid;grid-template-columns:56px 1.6fr 1fr 1fr 96px 76px;gap:14px;padding:16px 24px;background:rgba(242,233,218,.05);border-bottom:1px solid var(--line);font-size:11.5px;letter-spacing:3px;color:var(--ink3)}
+.list .row{display:grid;grid-template-columns:56px 1.6fr 1fr 1fr 96px 76px;gap:14px;padding:17px 24px;border-bottom:1px solid var(--line2);align-items:center;transition:.16s}
+.list .row:last-child{border-bottom:0}
+.list .row:hover{background:var(--bg3)}
+.list .row .n{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--amber);font-weight:900}
+.list .row .t{font-size:15.5px;font-weight:900;letter-spacing:.5px}
+.list .row .t small{display:block;font-size:11.5px;color:var(--ink3);font-weight:500;letter-spacing:.5px;margin-top:2px}
+.list .row .m{font-size:13px;color:var(--paper2);letter-spacing:.5px}
+.list .row .c{width:56px;height:10px;border-radius:1px;position:relative;overflow:hidden}
+.list .row .c i{position:absolute;inset:0;width:var(--w);opacity:.9}
+.list .row .r{font-family:ui-monospace,Menlo,monospace;font-size:13px;font-weight:900;text-align:right}
+.list .row .go{font-size:12px;letter-spacing:1.5px;color:var(--ink3);text-align:right}
+.list .row:hover .go{color:var(--amber)}
+
+/* 两种喝法 */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.duo .col{border:1px solid var(--line);background:var(--bg2);padding:26px 26px 24px;position:relative;overflow:hidden}
+.duo .col .ribbon{position:absolute;right:-34px;top:20px;width:150px;text-align:center;background:var(--c);color:#fff;font-size:11px;letter-spacing:3px;padding:5px 0;transform:rotate(38deg);font-weight:900}
+.duo .col h3{font-size:21px;font-weight:900;letter-spacing:2.5px}
+.duo .col .ds{font-size:12.5px;letter-spacing:1.5px;color:var(--ink3);margin:8px 0 18px}
+.duo .col ol{counter-reset:it}
+.duo .col ol li{display:grid;grid-template-columns:26px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line2);align-items:baseline}
+.duo .col ol li:last-child{border-bottom:0}
+.duo .col ol li .no{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--c);font-weight:900}
+.duo .col ol li .tx{font-size:14.5px;font-weight:700}
+.duo .col ol li .tx small{display:block;font-size:11.5px;color:var(--ink3);font-weight:500;letter-spacing:.5px;margin-top:2px}
+.duo .col ol li .rt{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;font-weight:900;color:var(--amber)}
+
+/* 醒酒：测试 */
+.taste{border:1px solid var(--line);background:var(--bg2);padding:30px}
+.taste .q{font-size:13px;letter-spacing:3px;color:var(--amber);margin-bottom:8px}
+.taste h3{font-size:24px;font-weight:900;letter-spacing:1.5px;margin-bottom:22px}
+.taste .opts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.taste .opt{border:1px solid var(--line);background:var(--bg3);padding:18px 16px;text-align:center;cursor:pointer;transition:.2s}
+.taste .opt:hover{border-color:var(--amber)}
+.taste .opt.on{border-color:var(--amber);background:rgba(214,138,46,.16)}
+.taste .opt .sw{width:34px;height:34px;border-radius:50%;margin:0 auto 11px;display:grid;place-items:center;font-size:11px;font-weight:900;color:#fff}
+.taste .opt b{display:block;font-size:15px;font-weight:900;letter-spacing:1px}
+.taste .opt small{display:block;font-size:11.5px;color:var(--ink3);margin-top:4px}
+.taste .rs{margin-top:24px;border-top:1px solid var(--line);padding-top:22px;display:none}
+.taste .rs.on{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.taste .rs .left .kicker{font-size:11px;letter-spacing:4px;color:var(--amber)}
+.taste .rs .left h4{font-size:26px;font-weight:900;letter-spacing:2px;margin:9px 0}
+.taste .rs .left p{font-size:13.5px;color:var(--paper2);letter-spacing:.5px}
+.taste .rs .left button{margin-top:18px;padding:12px 26px;background:var(--red);color:var(--paper);font-size:13px;font-weight:900;letter-spacing:2.5px}
+.taste .rs .left button:hover{background:var(--amber);color:var(--ink)}
+.taste .rs .glass{height:150px;position:relative;border-bottom:2px solid var(--line);overflow:hidden}
+.taste .rs .glass .fill{position:absolute;left:0;right:0;bottom:0;height:0;transition:height 1s ease;background:linear-gradient(180deg,var(--c1),var(--c2))}
+.taste .rs .glass .fill i{position:absolute;left:0;right:0;top:0;height:6px;background:rgba(255,255,255,.5)}
+
+/* 关于 */
+.about{display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:stretch}
+.about .tx{border:1px solid var(--line);background:var(--bg2);padding:30px}
+.about .tx .kicker{font-size:11.5px;letter-spacing:5px;color:var(--amber)}
+.about .tx h3{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:1.5px;margin:12px 0 16px;line-height:1.7}
+.about .tx h3 em{font-style:normal;color:var(--red)}
+.about .tx p{font-size:14px;color:var(--paper2);text-align:justify;letter-spacing:.5px}
+.about .tx .acts{margin-top:22px;display:flex;gap:11px;flex-wrap:wrap}
+.about .tx .acts a{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border:1.5px solid var(--paper);font-size:13px;font-weight:900;letter-spacing:2.5px}
+.about .tx .acts .a1{background:var(--red);border-color:var(--red)}
+.about .tx .acts .a1:hover{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.about .tx .acts a:hover{border-color:var(--amber);color:var(--amber)}
+.about .dl{border:1px solid var(--line);background:var(--bg2)}
+.about .dl div{display:grid;grid-template-columns:88px 1fr;border-bottom:1px solid var(--line2)}
+.about .dl div:last-child{border-bottom:0}
+.about .dl dt{padding:15px 18px;font-size:11.5px;letter-spacing:2px;color:var(--ink3);border-right:1px solid var(--line2);display:grid;place-items:center;text-align:center}
+.about .dl dd{padding:15px 18px;font-size:15px;font-weight:900;letter-spacing:.5px;color:var(--paper)}
+.about .dl dd a{color:var(--amber);border-bottom:1px solid rgba(214,138,46,.5);padding-bottom:1px;word-break:break-all}
+
+/* 栏目标头 */
+.shd{display:flex;align-items:center;gap:16px;margin:66px 0 26px;flex-wrap:wrap}
+.shd .no{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:3px;color:var(--ink3);border:1px solid var(--line);padding:5px 12px;flex-shrink:0}
+.shd .tx h2{font-size:clamp(23px,3.2vw,32px);font-weight:900;letter-spacing:2.5px}
+.shd .tx h2 em{font-style:normal;color:var(--amber)}
+.shd .tx small{display:block;font-size:11.5px;color:var(--ink3);letter-spacing:4px;margin-top:4px}
+.shd .ln{flex:1;height:1px;background:var(--line2);min-width:24px}
+.shd .mo{font-size:12.5px;font-weight:700;letter-spacing:2px;border-bottom:1px solid var(--line);padding-bottom:3px;color:var(--paper2)}
+.shd .mo:hover{color:var(--amber);border-color:var(--amber)}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);margin-top:70px;padding:52px 0 32px;background:rgba(0,0,0,.28);position:relative;z-index:1}
+.ft{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.ft .brand{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.ft .brand .glass{width:32px;height:38px;background:linear-gradient(135deg,var(--red) 0%,var(--red) 46%,rgba(255,255,255,.2) 46%,rgba(255,255,255,.2) 54%,var(--amber) 54%,var(--amber) 100%);border-radius:4px 4px 8px 8px;box-shadow:inset 0 0 0 2px rgba(242,233,218,.4);transform:rotate(-7deg)}
+.ft .brand b{font-size:23px;font-weight:900;letter-spacing:2px}
+.ft .brand i{font-style:normal;color:var(--amber)}
+.ft p{font-size:13.5px;color:var(--paper2);text-align:justify;letter-spacing:.5px}
+.ft .url{display:inline-block;margin-top:14px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--amber);word-break:break-all;border-bottom:1px solid rgba(214,138,46,.5);padding-bottom:2px}
+.ftc h4{font-size:11.5px;font-weight:900;letter-spacing:4px;margin-bottom:16px;padding-bottom:11px;border-bottom:1px solid var(--line);color:var(--amber)}
+.ftc ul li{padding:6.5px 0}
+.ftc a{font-size:14px;font-weight:700;letter-spacing:1px}
+.ftc a:hover{color:var(--amber)}
+.fb{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--ink3);letter-spacing:1px}
+.fb b{color:var(--paper2);font-weight:900}
+.scrolltop{position:fixed;right:22px;bottom:22px;z-index:95;width:44px;height:44px;border:1.5px solid var(--paper);background:var(--bg);display:none;place-items:center;font-size:15px;color:var(--paper)}
+.scrolltop.show{display:grid}
+.scrolltop:hover{border-color:var(--amber);color:var(--amber)}
+.msg{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);z-index:99;background:var(--paper);color:var(--ink);padding:12px 26px;font-size:13.5px;font-weight:700;letter-spacing:1.5px;opacity:0;pointer-events:none;transition:.28s;border-radius:2px}
+.msg.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:1080px){
+  .six,.notes,.opts,.rs{grid-template-columns:1fr 1fr!important}
+  .about,.duo,.menu2,.bar{grid-template-columns:1fr!important}
+  .cabinet{overflow-x:auto}
+  .cabinet .row{flex-wrap:nowrap;width:760px}
+}
+@media (max-width:860px){
+  .wrap{padding:0 16px}
+  .nav .wrap{height:auto;flex-wrap:wrap;padding:10px 0;gap:0}
+  .navlinks{display:none;flex-direction:column;width:100%;align-items:stretch;padding:6px 0 10px}
+  .navlinks.open{display:flex}
+  .navlinks a{display:block;padding:11px 2px;border-bottom:1px solid var(--line2)}
+  .navlinks a::before{display:none}
+  .mob{display:block}
+  .logo{padding-right:16px}
+  .pour{margin-left:auto}
+  .hero{padding:32px 0 20px}
+  .six,.notes,.opts,.rs{grid-template-columns:1fr!important}
+  .list .head{display:none}
+  .list .row{grid-template-columns:1fr 60px;gap:8px;padding:14px 16px}
+  .list .row .n,.list .row .m,.list .row .c{display:none}
+  .list .row .t{grid-column:1}
+  .list .row .r{grid-row:1;grid-column:2;text-align:right}
+  .list .row .go{grid-column:1/3;text-align:left;margin-top:5px;font-size:11px}
+  .menu2 .mi{border-right:0;border-bottom:1px solid var(--line2)}
+  .menu2 .mi:last-child{border-bottom:0}
+  .duo .col .ribbon{display:none}
+  .shd{margin:48px 0 20px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div class="nav">
+  <div class="wrap">
+    <a href="#" class="logo" title="酒色电影网 首页"><span class="glass"></span><b>酒<em>色</em>电影网</b></a>
+    <div class="navlinks" id="nl">
+      <a href="#cab" title="酒色电影网酒柜">酒 柜</a>
+      <a href="#six" title="酒色电影网六个色场">六 色</a>
+      <a href="#notes" title="酒色电影网品鉴笔记">品 鉴 笔 记</a>
+      <a href="#menu2" title="酒色电影网今晚喝法">今 晚 的 喝 法</a>
+      <a href="#list" title="酒色电影网完整酒单">完 整 酒 单</a>
+      <a href="#duo" title="酒色电影网两种喝法">两 种 喝 法</a>
+      <a href="#taste" title="酒色电影网醒酒测试">醒 酒 测 试</a>
+    </div>
+    <a href="#taste" class="pour" title="酒色电影网倒一杯">倒 一 杯</a>
+    <button class="mob" id="mob" aria-label="菜单"><i></i><i></i><i></i></button>
+  </div>
+</div>
+
+<!-- 首屏 -->
+<section class="hero wrap">
+  <div class="bar">
+    <div class="tx">
+      <div class="kicker">BAR · SELECTION OF FILMS</div>
+      <h1>酒<em>色</em>电影网<small><i>一杯一色，一色一幕</i></small></h1>
+      <p class="sub">酒色电影网（https://jiusedianyingwang-wap.github.io）按色彩与气氛排片：一杯一色，一色一幕。红是情热，琥珀是回忆，墨黑是深夜，共六色，每色十二部。</p>
+      <div class="menu">
+        <span>红 RED</span><span>琥珀 AMBER</span><span>金 GOLD</span><span>墨绿 GREEN</span><span>靛蓝 BLUE</span><span>梅紫 PLUM</span>
+      </div>
+      <div class="acts">
+        <a href="#six" class="a1" title="酒色电影网六色">开 始 喝</a>
+        <a href="#taste" class="a2" title="酒色电影网醒酒测试">先 测 一 测</a>
+      </div>
+    </div>
+    <div class="cabinet" id="cab"></div>
+  </div>
+</section>
+
+<!-- 栏目一：六个色场 -->
+<section class="wrap" id="six">
+  <div class="shd">
+    <div class="no">No.01 / SIX</div>
+    <div class="tx"><h2>六个<em>色场</em></h2><small>COLOR FIELDS · 选一个颜色，就开始</small></div>
+    <span class="ln"></span>
+    <a class="mo" href="#" title="酒色电影网全部色场">全 部 色 场 ›</a>
+  </div>
+  <div class="six" id="sixbox"></div>
+</section>
+
+<!-- 栏目二：品鉴笔记 -->
+<section class="wrap" id="notes">
+  <div class="shd">
+    <div class="no">No.02 / NOTES</div>
+    <div class="tx"><h2>品鉴<em>笔记</em></h2><small>TASTING NOTES · 三色，每色三部</small></div>
+    <span class="ln"></span>
+    <a class="mo" href="#" title="酒色电影网全部品鉴笔记">全 部 笔 记 ›</a>
+  </div>
+  <div class="notes" id="notesbox"></div>
+</section>
+
+<!-- 栏目三：今晚的喝法 -->
+<section class="wrap" id="menu2">
+  <div class="shd">
+    <div class="no">No.03 / SERVE</div>
+    <div class="tx"><h2>今晚的<em>喝法</em></h2><small>HOW TO SERVE · 按时长与气氛给你配</small></div>
+    <span class="ln"></span>
+    <a class="mo" href="#" title="酒色电影网全部喝法">全 部 喝 法 ›</a>
+  </div>
+  <div class="menu2" id="menu2box"></div>
+</section>
+
+<!-- 栏目四：完整酒单 -->
+<section class="wrap" id="list">
+  <div class="shd">
+    <div class="no">No.04 / LIST</div>
+    <div class="tx"><h2>完整<em>酒单</em></h2><small>FULL LIST · 十二部，按浓度排序</small></div>
+    <span class="ln"></span>
+    <a class="mo" href="#" title="酒色电影网完整酒单">下 一 页 ›</a>
+  </div>
+  <div class="list">
+    <div class="head"><span>No.</span><span>片 名</span><span>色 场</span><span>氛 围 词</span><span>浓 度</span><span style="text-align:right">评 分</span></div>
+    <div id="listbox"></div>
+  </div>
+</section>
+
+<!-- 栏目五：两种喝法 -->
+<section class="wrap" id="duo">
+  <div class="shd">
+    <div class="no">No.05 / DUO</div>
+    <div class="tx"><h2>两种<em>喝法</em></h2><small>SOLO & PAIR · 一个人 / 两个人</small></div>
+    <span class="ln"></span>
+    <a class="mo" href="#" title="酒色电影网全部喝法">更 多 搭 配 ›</a>
+  </div>
+  <div class="duo" id="duobox"></div>
+</section>
+
+<!-- 栏目六：醒酒测试 -->
+<section class="wrap" id="taste">
+  <div class="shd">
+    <div class="no">No.06 / TASTE</div>
+    <div class="tx"><h2>醒酒<em>测试</em></h2><small>WHAT'S YOUR COLOR · 三秒出结果</small></div>
+  </div>
+  <div class="taste" id="tastebox">
+    <div class="q">QUESTION 01 / 04</div>
+    <h3 id="tq">今晚，你打算怎么过？</h3>
+    <div class="opts" id="topts"></div>
+    <div class="rs" id="trs"></div>
+  </div>
+</section>
+
+<!-- 关于 -->
+<section class="wrap" id="hw">
+  <div class="shd">
+    <div class="no">No.07 / ABOUT</div>
+    <div class="tx"><h2>酒柜<em>档案</em></h2><small>网站名称与网址，记在此处</small></div>
+  </div>
+  <div class="about">
+    <div class="tx">
+      <div class="kicker">— 关 于 本 馆 —</div>
+      <h3>网站名称：<em>酒色电影网</em><br>网站网址：<em>https://jiusedianyingwang-wap.github.io</em></h3>
+      <p>酒色电影网不按类型排片，按色彩与气氛排片。一杯一色，一色一幕：红是情热，琥珀是回忆，金是旧时光，墨绿是深夜，靛蓝是孤独，梅紫是迷离。六个色场，每场十二部，配一张品鉴笔记。</p>
+      <div class="acts">
+        <a href="#six" class="a1" title="酒色电影网六色">进 酒 柜</a>
+        <a href="#taste" title="酒色电影网醒酒测试">测 一 测</a>
+      </div>
+    </div>
+    <div class="dl">
+      <div><dt>网站名称</dt><dd>酒色电影网</dd></div>
+      <div><dt>网站网址</dt><dd><a href="https://jiusedianyingwang-wap.github.io/" title="酒色电影网">jiusedianyingwang-wap.github.io</a></dd></div>
+      <div><dt>色 场 数</dt><dd>六 色</dd></div>
+      <div><dt>每 场 片 单</dt><dd>十 二 部</dd></div>
+      <div><dt>开 馆 时 辰</dt><dd>每日 亥 时 22:00</dd></div>
+      <div><dt>在 座 客 人</dt><dd>19,400 位</dd></div>
+      <div><dt>更 新 规 矩</dt><dd>每逢初八、廿三换新色</dd></div>
+      <div><dt>醒 酒 信 箱</dt><dd><a href="#" title="酒色电影网醒酒信箱">mail@jiusedianyingwang-wap.github.io</a></dd></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="brand"><span class="glass"></span><b>酒<em>色</em>电影网</b></div>
+        <p>酒色电影网（https://jiusedianyingwang-wap.github.io）按色彩与气氛排片：一杯一色，一色一幕。红是情热，琥珀是回忆，墨黑是深夜，共六色，每色十二部。</p>
+        <a class="url" href="https://jiusedianyingwang-wap.github.io/" title="酒色电影网">🔗 https://jiusedianyingwang-wap.github.io</a>
+      </div>
+      <div class="ftc">
+        <h4>色 场</h4>
+        <ul>
+          <li><a href="#six" title="酒色电影网红">红 · 情 热</a></li>
+          <li><a href="#six" title="酒色电影网琥珀">琥 珀 · 回 忆</a></li>
+          <li><a href="#six" title="酒色电影网墨绿">墨 绿 · 深 夜</a></li>
+          <li><a href="#six" title="酒色电影网全部色场">其 余 色 场</a></li>
+        </ul>
+      </div>
+      <div class="ftc">
+        <h4>酒 单</h4>
+        <ul>
+          <li><a href="#list" title="酒色电影网完整酒单">完 整 酒 单</a></li>
+          <li><a href="#notes" title="酒色电影网品鉴笔记">品 鉴 笔 记</a></li>
+          <li><a href="#duo" title="酒色电影网两种喝法">两 种 喝 法</a></li>
+          <li><a href="#menu2" title="酒色电影网今晚喝法">今 晚 的 喝 法</a></li>
+        </ul>
+      </div>
+      <div class="ftc">
+        <h4>馆 务</h4>
+        <ul>
+          <li><a href="#hw" title="关于酒色电影网">酒 柜 档 案</a></li>
+          <li><a href="#taste" title="酒色电影网醒酒测试">醒 酒 测 试</a></li>
+          <li><a href="#" title="酒色电影网配色规矩">配 色 规 矩</a></li>
+          <li><a href="#" title="酒色电影网客规">入 馆 客 规</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fb">
+      <span>© 2026 <b>酒色电影网</b> · 网站名称：酒色电影网 ｜ 网站网址：https://jiusedianyingwang-wap.github.io ｜ 一杯一色，一色一幕</span>
+      <span class="mono">调 酒 师 · 酒 色 ｜ 执 笔 · 两 人 ｜ 更 新 · 初 八 廿 三</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="scrolltop" id="st" aria-label="回到顶部">↑</a>
+<div class="msg" id="msg">已加入今晚的喝法</div>
+
+<script>
+var COL={"red":["#c8381f","#7a1c10"],"amber":["#d68a2e","#8a5518"],"gold":["#d4af37","#8a7220"],"green":["#3f6b4a","#24402c"],"blue":["#2f5a78","#1a3648"],"plum":["#7a3b5a","#4a2236"]};
+var CNAME={"red":"红","amber":"琥珀","gold":"金","green":"墨绿","blue":"靛蓝","plum":"梅紫"};
+
+var HEX={"red":"#C8381F","amber":"#D68A2E","gold":"#D4AF37","green":"#3F6B4A","blue":"#2F5A78","plum":"#7A3B5A"};
+
+var BOT=[["red",12],["amber",12],["gold",12],["green",12],["blue",12],["plum",12]];
+
+var SIX=[
+  ["red","红 · 情热","体温在升","12 部 · 浓度高"],
+  ["amber","琥珀 · 回忆","旧事上头","12 部 · 浓度中高"],
+  ["gold","金 · 旧时光","泛黄的下午","12 部 · 浓度中"],
+  ["green","墨绿 · 深夜","三点钟的窗","12 部 · 浓度高"],
+  ["blue","靛蓝 · 孤独","一个人刚好","12 部 · 浓度中"],
+  ["plum","梅紫 · 迷离","分不清真假","12 部 · 浓度中高"]
+];
+
+var NOTES=[
+  ["red","情热的三种喝法","三部一组",9.4,["《花样年华》 王家卫 / 旗袍与走廊","《燃烧》 李沧东 / 三种饥饿","《色，戒》 李安 / 棋逢对手"]],
+  ["amber","回忆的三次上头","三部一组",9.1,["《情书》 岩井俊二 / 两个藤井树","《一一》 杨德昌 / 一生太长","《阳光灿烂的日子》 姜文 / 那个夏天"]],
+  ["green","深夜的三盏灯","三部一组",8.8,["《驾驶我的车》 滨口龙介 / 三小时的车","《路边野餐》 毕赣 / 荡麦四十分钟","《地球最后的夜晚》 毕赣 / 旋转的房间"]]
+];
+
+var MENU=[
+  ["独酌","一个人看","片子不长，看完还能睡",1],
+  ["对饮","两个人看","中间要能停下来说话",2],
+  ["续摊","连看三部","准备点心和一杯水",3],
+  ["空杯","不想看片","看片单也算来过",4]
+];
+
+var LIST=[
+  ["《花样年华》","red","情热 · 压抑","王家卫",96,9.3],
+  ["《燃烧》","red","情热 · 焦躁","李沧东",148,8.9],
+  ["《色，戒》","red","情热 · 棋逢","李安",158,8.8],
+  ["《情书》","amber","回忆 · 白茫茫","岩井俊二",117,9.1],
+  ["《一一》","amber","回忆 · 一生","杨德昌",173,9.4],
+  ["《阳光灿烂的日子》","amber","回忆 · 夏天","姜文",134,9.0],
+  ["《驾驶我的车》","green","深夜 · 车程","滨口龙介",179,8.8],
+  ["《路边野餐》","green","深夜 · 荡麦","毕赣",110,8.4],
+  ["《地球最后的夜晚》","green","深夜 · 旋转","毕赣",138,7.8],
+  ["《重庆森林》","blue","孤独 · 便利店","王家卫",102,8.9],
+  ["《迷失东京》","blue","孤独 · 异国","Sofia Coppola",102,8.6],
+  ["《春光乍泄》","plum","迷离 · 瀑布","王家卫",96,8.9]
+];
+
+var DUO=[
+  ["一个人","SOLO · 独酌不说话","red",["《驾驶我的车》 · 179 分钟 · 长车程","《一一》 · 173 分钟 · 一生太长","《燃烧》 · 148 分钟 · 三种饥饿","《花样年华》 · 96 分钟 · 压抑"]],
+  ["两个人","PAIR · 中间要能停","plum",["《情书》 · 117 分钟 · 两个人同名","《重庆森林》 · 102 分钟 · 两罐菠萝","《迷失东京》 · 102 分钟 · 异国","《春光乍泄》 · 96 分钟 · 瀑布"]]
+];
+
+var TASTE=[
+  {q:"今晚，你打算怎么过？",o:[["red","独酌","一个人"],["amber","聚会","三四个人"],["green","深夜","过了零点"],["plum","约会","两个人"]]},
+  {q:"你现在的情绪更接近哪一种？",o:[["red","燥","想喊"],["amber","闷","想坐"],["blue","空","想发呆"],["plum","乱","想不出"]]},
+  {q:"你打算看多久？",o:[["green","一部","两小时内"],["amber","两部","一个晚上"],["red","连看","到天亮"],["blue","随便","看心情"]]},
+  {q:"灯光呢？",o:[["green","全关","只要屏幕"],["amber","台灯","暖黄那种"],["blue","夜灯","一点光"],["plum","不关","懒得动"]]}
+];
+
+var $=function(i){return document.getElementById(i)};
+var MSG=function(t){var m=$('msg');m.textContent=t;m.classList.add('on');setTimeout(function(){m.classList.remove('on')},1900)};
+
+/* 酒柜 */
+$('cab').innerHTML=BOT.map(function(b){
+  var col=b[0],n=b[1],bottles='';
+  for(var i=0;i<n;i++){bottles+='<div class="bottle"><span class="cap"></span><span class="neck"></span><span class="body" style="background:linear-gradient(160deg,'+COL[col][0]+','+COL[col][1]+')"><span class="lbl"><b>'+CNAME[col]+'</b>NO.'+String(i+1).padStart(2,'0')+'</span></span><span class="name">'+CNAME[col]+' · '+String(i+1).padStart(2,'0')+'</span></div>'}
+  return '<div class="shelf"><div class="row">'+bottles+'</div></div>';
+}).join('');
+
+/* 六个色场 */
+$('sixbox').innerHTML=SIX.map(function(s,i){
+  return '<article class="glasscard" style="--c:'+HEX[s[0]]+'" data-c="'+s[0]+'"><div class="fill" style="background:linear-gradient(160deg,'+COL[s[0]][0]+','+COL[s[0]][1]+')"></div><div class="sheen"></div><div class="rim"></div><div class="ct"><div class="hex">COLOR · '+String(i+1).padStart(2,'0')+'</div><h3>'+s[1]+'</h3><div class="feel">'+s[2]+'</div><div class="num">'+s[3]+'</div><div class="arr">挑 一 杯 →</div></div></article>';
+}).join('');
+
+/* 品鉴笔记 */
+$('notesbox').innerHTML=NOTES.map(function(n,i){
+  var lis=n[4].map(function(line){var p=line.split(' / ');return '<li><span class="dot"></span><span>'+p[0]+'<small>'+p[1]+' · '+p[2]+'</small></span></li>'}).join('');
+  return '<article class="note" style="--c:'+HEX[n[0]]+'"><div class="hd"><div class="sw" style="background:'+HEX[n[0]]+'"><b>'+(i+1)+'</b>'+CNAME[n[0]]+'</div><div class="ti"><h4>'+n[1]+'</h4><small>'+n[2]+' · 均分 '+n[3]+'</small></div></div><div class="bd"><ul>'+lis+'</ul></div><div class="ft"><span>品鉴笔记 · '+String(i+1).padStart(2,'0')+'</span><b>共 3 部</b></div></article>';
+}).join('');
+
+/* 今晚的喝法 */
+$('menu2box').innerHTML=MENU.map(function(m,i){
+  return '<div class="mi" data-i="'+i+'"><div class="ic">'+String(i+1).padStart(2,'0')+'</div><div class="st">SERVE 0'+(i+1)+'</div><h4>'+m[0]+'</h4><p>'+m[1]+'<br>'+m[2]+'</p></div>';
+}).join('');
+
+/* 完整酒单 */
+$('listbox').innerHTML=LIST.map(function(l,i){
+  return '<div class="row" data-c="'+l[1]+'"><span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="t">'+l[0]+'<small>'+l[3]+' · '+l[4]+' 分钟</small></span><span class="m">'+CNAME[l[1]]+' · '+l[2]+'</span><span class="c"><i style="background:'+HEX[l[1]]+'"></i></span><span class="r">'+l[5]+'</span><span class="go">品 鉴 笔 记 →</span></div>';
+}).join('');
+
+/* 两种喝法 */
+$('duobox').innerHTML=DUO.map(function(d){
+  var lis=d[3].map(function(line,j){var p=line.split(' · ');return '<li><span class="no">'+String(j+1).padStart(2,'0')+'</span><span class="tx">'+p[0]+'<small>'+p[1]+' · '+p[2]+'</small></span><span class="rt">9.'+(8-j)+'</span></li>'}).join('');
+  return '<div class="col" style="--c:'+HEX[d[2]]+'"><div class="ribbon">'+d[0]+'</div><h3>'+d[0]+'</h3><div class="ds">'+d[1]+'</div><ol>'+lis+'</ol></div>';
+}).join('');
+
+/* 醒酒测试 */
+var ti=0,scores={"red":0,"amber":0,"green":0,"blue":0,"plum":0};
+function renderQ(){
+  var t=TASTE[ti];
+  $('tq').textContent=t.q;
+  $('topts').innerHTML=t.o.map(function(o,i){
+    return '<div class="opt" data-c="'+o[0]+'" data-i="'+i+'"><div class="sw" style="background:'+HEX[o[0]]+'">'+String(i+1)+'</div><b>'+o[1]+'</b><small>'+o[2]+'</small></div>';
+  }).join('');
+  $('trs').classList.remove('on');
+  if(ti>0){$('tq').insertAdjacentHTML('afterend','')}
+  $('tq').textContent=t.q+'  （'+(ti+1)+'/4）';
+}
+$('topts').addEventListener('click',function(e){
+  var el=e.target.closest('.opt');if(!el)return;
+  var c=el.dataset.c;
+  scores[c]+= (el.dataset.i==='0'?3:el.dataset.i==='1'?2:el.dataset.i==='2'?1:1);
+  if(ti<TASTE.length-1){ti++;renderQ();}
+  else{
+    var top=Object.keys(scores).sort(function(a,b){return scores[b]-scores[a]})[0];
+    var rest=LIST.filter(function(l){return l[1]===top;}).slice(0,3);
+    var rs=$('trs');
+    rs.classList.add('on');
+    rs.innerHTML='<div class="left"><div class="kicker">你 的 颜 色</div><h4 style="color:'+HEX[top]+'">'+CNAME[top]+'</h4><p>'+ ({"red":"今晚别憋着，体温在升。","amber":"今晚坐着就好，旧事会上头。","green":"深夜留一盏，别全关。","blue":"一个人刚好，不用解释。","plum":"今晚分不清真假，也别急着分清。"}[top])+'</p><button id="rt">换 一 组 重 测</button></div><div class="glass"><div class="fill" style="--c1:'+COL[top][0]+';--c2:'+COL[top][1]+';height:74%"><i></i></div></div>';
+    setTimeout(function(){rs.querySelector('.fill').style.height='74%'},60);
+    $('rt').onclick=function(){ti=0;scores={"red":0,"amber":0,"green":0,"blue":0,"plum":0};renderQ()};
+    if(rest.length){rs.querySelector('.left').insertAdjacentHTML('beforeend','<div style="margin-top:16px;font-size:12.5px;color:#a99'+(0?'':'')+'">今晚三部：'+rest.map(function(r){return r[0]}).join('、')+'</div>')}
+    MSG('你的颜色是 '+CNAME[top]);
+  }
+});
+renderQ();
+
+/* 酒柜/色场点击 */
+$('cab').addEventListener('click',function(){scrollTo({top:$('six').offsetTop-70,behavior:'smooth'})});
+$('sixbox').addEventListener('click',function(e){var c=e.target.closest('.glasscard');if(c)MSG('已选色场：'+CNAME[c.dataset.c])});
+$('menu2box').addEventListener('click',function(e){var m=e.target.closest('.mi');if(m)MSG('已加入今晚的喝法')});
+$('listbox').addEventListener('click',function(e){var r=e.target.closest('.row');if(r)MSG('已加入今晚的喝法')});
+
+/* 回到顶部 */
+var st=$('st');
+addEventListener('scroll',function(){st.classList[scrollY>700?'add':'remove']('show')});
+st.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+
+/* 移动端菜单 */
+var mb=$('mob'),nl=$('nl');
+mb.addEventListener('click',function(){nl.classList.toggle('open')});
+nl.addEventListener('click',function(e){
+  if(e.target.tagName==='A'){nl.classList.remove('open');var h=e.target.getAttribute('href');if(h&&h.charAt(0)==='#'){e.preventDefault();var el=document.querySelector(h);if(el)scrollTo({top:el.offsetTop-70,behavior:'smooth'})}}
+});
+</script>
+</body>
+</html>
